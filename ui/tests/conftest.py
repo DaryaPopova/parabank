@@ -1,11 +1,17 @@
-import os
-import json
-
+import logging
+import sys
 import pytest
 
 from selenium import webdriver
 
 from ui.pages.registrationPage import RegistrationPage
+
+logger = logging.getLogger()
+handler = logging.StreamHandler(sys.stdout)
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+handler.setFormatter(formatter)
+logger.addHandler(handler)
+logger.setLevel(logging.INFO)
 
 
 @pytest.fixture()

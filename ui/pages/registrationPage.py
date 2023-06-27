@@ -11,19 +11,33 @@ class RegistrationPage(BasePage):
     def __init__(self, driver):
         super().__init__(driver)
 
+    locators = {
+        'first_name': ('ID', "customer.firstName"),
+        'last_name': ('ID', "customer.lastName"),
+        'address_street': ('ID', "customer.address.street"),
+        'address_city': ('ID', "customer.address.city"),
+        'address_state': ('ID', "customer.address.state"),
+        'address_zip_code': ('ID', "customer.address.zipCode"),
+        'phone_number': ('ID', "customer.phoneNumber"),
+        'ssn': ('ID', "customer.ssn"),
+        'username': ('ID', "customer.username"),
+        'password': ('ID', "customer.password"),
+        'repeated_password': ('ID', "repeatedPassword"),
+    }
+
     def fill_form(self, user: User):
         print("Filling registration form")
-        self.driver.find_element(By.ID, "customer.firstName").send_keys(user.first_name)
-        self.driver.find_element(By.ID, "customer.lastName").send_keys(user.last_name)
-        self.driver.find_element(By.ID, "customer.address.street").send_keys(user.address_street)
-        self.driver.find_element(By.ID, "customer.address.city").send_keys(user.address_city)
-        self.driver.find_element(By.ID, "customer.address.state").send_keys(user.address_state)
-        self.driver.find_element(By.ID, "customer.address.zipCode").send_keys(user.address_zip_code)
-        self.driver.find_element(By.ID, "customer.phoneNumber").send_keys(user.phone_number)
-        self.driver.find_element(By.ID, "customer.ssn").send_keys(user.ssn)
-        self.driver.find_element(By.ID, "customer.username").send_keys(user.username)
-        self.driver.find_element(By.ID, "customer.password").send_keys(user.password)
-        self.driver.find_element(By.ID, "repeatedPassword").send_keys(user.repeated_password)
+        self.first_name.send_keys(user.first_name)
+        self.last_name.send_keys(user.last_name)
+        self.address_street.send_keys(user.address_street)
+        self.address_city.send_keys(user.address_city)
+        self.address_state.send_keys(user.address_state)
+        self.address_zip_code.send_keys(user.address_zip_code)
+        self.phone_number.send_keys(user.phone_number)
+        self.ssn.send_keys(user.ssn)
+        self.username.send_keys(user.username)
+        self.password.send_keys(user.password)
+        self.repeated_password.send_keys(user.repeated_password)
 
     def submit_form(self, driver) -> HomePage:
         print("Submitting registration form")

@@ -32,11 +32,9 @@ class RegistrationPage(BasePage):
         self.driver.find_element(By.CSS_SELECTOR, "form#customerForm input.button").click()
         return HomePage(driver)
 
-    def wait_for_success_message(self):
-        success_message = WebDriverWait(self.driver, 10).until(
-            EC.presence_of_element_located((By.ID, "success_message"))
-        )
-        return success_message.is_displayed()
-
     def get_title(self) -> str:
         return self.driver.find_element(By.CSS_SELECTOR, "h1.title").text
+
+    def get_different_passwords_message(self) -> str:
+        return self.driver.find_element(By.ID, "repeatedPassword.errors").text
+

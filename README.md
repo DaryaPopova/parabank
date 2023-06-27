@@ -35,3 +35,15 @@ Run tests
 ```bash
 pytest ui/tests
 ```
+#### Run the project via Docker
+
+Ensure you have Docker installed
+
+Build docker file
+```bash
+docker build -t parabank_tests  .
+```
+Run docker file
+```bash
+docker run parabank_tests
+```

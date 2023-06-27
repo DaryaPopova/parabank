@@ -1,5 +1,3 @@
-from typing import Type
-
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -32,9 +30,12 @@ class RegistrationPage(BasePage):
         self.driver.find_element(By.CSS_SELECTOR, "form#customerForm input.button").click()
         return HomePage(driver)
 
+    def wait_for_welcome_title(self):
+        WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located((By.XPATH, "//h1[contains(text(), 'Welcome')]")))
+
     def get_title(self) -> str:
         return self.driver.find_element(By.CSS_SELECTOR, "h1.title").text
 
     def get_different_passwords_message(self) -> str:
         return self.driver.find_element(By.ID, "repeatedPassword.errors").text
-

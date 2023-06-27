@@ -3,8 +3,8 @@ import logging
 import os
 import time
 
-from ui.entities.User import User
-from ui.pages.registrationPage import RegistrationPage
+from ui.entities.user import User
+from ui.pages.registration_page import RegistrationPage
 
 logger = logging.getLogger()
 

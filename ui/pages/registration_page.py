@@ -3,9 +3,9 @@ import logging
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-from ui.entities import User
-from ui.pages.homePage import HomePage
-from ui.pages.basePage import BasePage
+from ui.entities import user
+from ui.pages.home_page import HomePage
+from ui.pages.base_page import BasePage
 
 logger = logging.getLogger()
 

@@ -1,6 +1,6 @@
 from selenium.webdriver.common.by import By
 
-from ui.pages.basePage import BasePage
+from ui.pages.base_page import BasePage
 
 
 class HomePage(BasePage):

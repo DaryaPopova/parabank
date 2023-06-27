@@ -5,7 +5,7 @@ import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
-from ui.pages.registrationPage import RegistrationPage
+from ui.pages.registration_page import RegistrationPage
 
 logger = logging.getLogger()
 handler = logging.StreamHandler(sys.stdout)

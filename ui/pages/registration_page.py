@@ -3,7 +3,7 @@ import logging
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-from ui.entities import user
+from ui.entities.user import User
 from ui.pages.home_page import HomePage
 from ui.pages.base_page import BasePage
 

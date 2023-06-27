@@ -14,6 +14,7 @@ Go to the directory
 ```bash
 cd parabank/
 ```
+### Run the project via installing environment and requirements
 
 Create virtual python environment
 ```bash
@@ -35,7 +36,7 @@ Run tests
 ```bash
 pytest ui/tests
 ```
-#### Run the project via Docker
+### Run the project via Docker
 
 Ensure you have Docker installed
 

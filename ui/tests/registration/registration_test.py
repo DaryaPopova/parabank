@@ -20,9 +20,8 @@ def test_registration_form(driver):
     registration_page: RegistrationPage = RegistrationPage(driver)
     logger.info("Filling registration form")
     registration_page.fill_form(user)
-    logger.info("Submitting registration form")
+
     home_page = registration_page.submit_form(driver)
     actual_title = home_page.get_title()
     expected_title = "Welcome {username}".format(username=user.username)
-
     assert actual_title == expected_title

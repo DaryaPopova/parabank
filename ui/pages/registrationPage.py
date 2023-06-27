@@ -26,9 +26,9 @@ class RegistrationPage(BasePage):
         'username': ('ID', "customer.username"),
         'password': ('ID', "customer.password"),
         'repeated_password': ('ID', "repeatedPassword"),
-        'submit_button': ('CSS_SELECTOR', "form#customerForm input.button"),
+        'submit_button': ('CSS', "form#customerForm input.button"),
         'welcome_title': ('XPATH', "//h1[contains(text(), 'Welcome')]"),
-        'title': ('By.CSS_SELECTOR', "h1.title"),
+        'title': ('CSS', "h1.title"),
         'repeated_password_errors_message': ('ID', "repeatedPassword.errors")
     }
 
@@ -57,6 +57,7 @@ class RegistrationPage(BasePage):
         self.repeated_password.send_keys(user.repeated_password)
 
     def submit_form(self, driver) -> HomePage:
+        logger.info("Submitting registration form")
         self.submit_button.click()
         return HomePage(driver)
 

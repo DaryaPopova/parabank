@@ -8,7 +8,7 @@ class HomePage(BasePage):
         super().__init__(driver)
 
     locators = {
-        'title': ('By.CSS_SELECTOR', "h1.title"),
+        'title': ('CSS', "h1.title")
     }
 
     def get_title(self) -> str:

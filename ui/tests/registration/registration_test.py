@@ -3,6 +3,7 @@ import logging
 import os
 import time
 import pytest
+from selenium.webdriver.chrome.webdriver import WebDriver
 
 from ui.entities.user import User
 from ui.pages.registration_page import RegistrationPage
@@ -10,7 +11,7 @@ from ui.pages.registration_page import RegistrationPage
 logger = logging.getLogger()
 
 
-def get_data() -> list[User]:
+def get_data() -> list[dict]:
     json_path = os.path.join(os.path.dirname(__file__), "registration_test_data.json")
     with open(json_path) as json_file:
         data = json.load(json_file)
@@ -18,7 +19,7 @@ def get_data() -> list[User]:
 
 
 @pytest.mark.parametrize("user_data", get_data())
-def test_registration_form(driver, user_data):
+def test_registration_form(driver: WebDriver, user_data: dict):
 
     user_data["username"] += str(time.time_ns() % 1000000)
     user = User(**user_data)

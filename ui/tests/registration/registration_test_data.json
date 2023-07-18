@@ -1,5 +1,5 @@
-{
-  "user": {
+[
+  {
     "first_name": "daria",
     "last_name": "ppva",
     "address_street": "street1",
@@ -11,5 +11,18 @@
     "username": "daria",
     "password": "111",
     "repeated_password": "111"
+    },
+   {
+    "first_name": "maria",
+    "last_name": "ggva",
+    "address_street": "street2",
+    "address_city": "city2",
+    "address_state": "state2",
+    "address_zip_code": "222222",
+    "phone_number": "987654321",
+    "ssn": "999",
+    "username": "maria",
+    "password": "222",
+    "repeated_password": "222"
   }
-}
+]

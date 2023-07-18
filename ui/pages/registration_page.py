@@ -33,8 +33,9 @@ class RegistrationPage(BasePage):
     }
 
     def fill_form(self, user: User):
-        logger.info("Fill first name")
-        self.first_name.send_keys(user.first_name)
+        user_first_name = user.first_name
+        logger.info("Fill first name: {}".format(user_first_name))
+        self.first_name.send_keys(user_first_name)
         logger.info("Fill last name")
         self.last_name.send_keys(user.last_name)
         logger.info("Fill address street")
